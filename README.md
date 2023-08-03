@@ -102,7 +102,7 @@ vs = self.text_decoder.config.vocab_size
 
 # SMILE
 logits_mask = torch.zeros(bs, vs).to(logits.device).scatter_(1, label, True)
-logits_mask[:, 0] = 0 # first-token MLE
+logits_mask[:, 0] = 1 # first-token MLE
 logits_mask = logits_mask.unsqueeze(1).expand(-1, N, -1).clone()
 selected_logits = logits.masked_fill(logits_mask == 0, float('-inf'))
 loss = F.cross_entropy(selected_logits.view(-1, vs), label.view(-1), ignore_index=0, reduction='mean')
