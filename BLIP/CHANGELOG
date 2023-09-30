@@ -1,0 +1,24 @@
+Compared to the original BLIP code, the following changes have been made by Zihao Yue:
+
+  deleted:    BLIP.gif
+  deleted:    CODEOWNERS
+  deleted:    CODE_OF_CONDUCT.md
+  deleted:    LICENSE.txt
+  deleted:    README.md
+  deleted:    SECURITY.md
+  deleted:    cog.yaml
+  deleted:    eval_nocaps.py
+  deleted:    eval_retrieval_video.py
+  deleted:    models/blip_itm.py
+  deleted:    models/blip_nlvr.py
+  deleted:    models/blip_pretrain.py
+  deleted:    models/blip_retrieval.py
+  deleted:    models/nlvr_encoder.py
+  deleted:    train_vqa.py
+  deleted:    predict.py
+  deleted:    pretrain.py
+  deleted:    train_nlvr.py
+  deleted:    train_retrieval.py
+  modified:   train_caption.py
+  modified:   configs/caption_coco.yaml
+  modified:   demo.ipynb
