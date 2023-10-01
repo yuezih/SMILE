@@ -18,7 +18,7 @@
       <img alt="Static Badge" src="https://img.shields.io/badge/arXiv-2306.13460-b31b1b?style=flat&link=https%3A%2F%2Farxiv.org%2Fabs%2F2306.13460">
   	</a>
     <a >
-  <img alt="Static Badge" src="https://img.shields.io/badge/Space-SMILE-ffd21e?style=flat&link=https%3A%2F%2Fhuggingface.co%2Fspaces%2Fyuezih%2FBLIP-SMILE">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Spaces-BLIP_SMILE-ffd21e?style=flat&link=https%3A%2F%2Fhuggingface.co%2Fspaces%2Fyuezih%2FBLIP-SMILE">
   	</a>
     <br />
 </p>
@@ -68,12 +68,12 @@ We provide our two checkpoints finetuned on MSCOCO with SMILE:
 - `blip_smile_base.pth`: The vanilla SMILE-optimized BLIP.
 - `blip_mle_smile_base.pth`: BLIP finetuned with MLE+SMILE (0.01:0.99), with a compromise between descriptiveness and accuracy.
 
-Method|Cap. Len.|Lex. Div.|R@1|R@5|CLIPScore|PPL
+Model|Cap. Len.|Lex. Div.|R@1|R@5|CLIPScore|PPL
 -|:-:|:-:|:-:|:-:|:-:|:-:
 `blip_smile_base.pth`|22.3|4.5|10.0|24.5|75.0|95.6
 `blip_mle_smile_base.pth`|19.8|3.6|**10.9**|**25.1**|76.2|79.4
 
-They are available at our [Huggingface Spaces](https://huggingface.co/spaces/yuezih/BLIP-SMILE). You can clone the entire space with the following commands, and then the checkpoints can be found in `BLIP-SMILE/model`.
+They are available at our [Huggingface Spaces](https://huggingface.co/spaces/yuezih/BLIP-SMILE/tree/main/model). You can clone the entire space with the following commands, and then the checkpoints can be found in `BLIP-SMILE/model`.
 
 ```
 # Make sure you have git-lfs installed (https://git-lfs.com)
@@ -81,7 +81,7 @@ git lfs install
 git clone https://huggingface.co/spaces/yuezih/BLIP-SMILE
 ```
 
-We also provide [links](https://1drv.ms/f/s!AocXJ7uKxt6XccRUrspMf11CHgw?e=GLrM1O) to download the checkpoints from OneDrive.
+We also provide the [link](https://1drv.ms/f/s!AocXJ7uKxt6XccRUrspMf11CHgw?e=GLrM1O) to download the checkpoints from OneDrive.
 
 
 After preparing the checkpoint, Set the checkpoint path in `SMILE/BLIP/configs/caption_coco.yaml`.
@@ -98,7 +98,7 @@ bash scripts/eval.sh
 
 Kind reminders:
 - Please use `transformers==4.15.0` rather than a higher version.
-- For `torch<=2.0.0`, replace `torchrun` with `python -m torch.distributed.run` in the training and inference scripts.
+- For `torch<2.0.0`, replace `torchrun` with `python -m torch.distributed.run` in the training and inference scripts.
 
 ## Citation
 
