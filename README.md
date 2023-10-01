@@ -1,6 +1,6 @@
 <div>
   <h2 align="center">
-    🫠 SMILE
+    🤗 SMILE
   </h2>
 </div>
 
@@ -14,8 +14,15 @@
     <a >
        <img alt="Stars" src="https://img.shields.io/github/stars/yuezih/SMILE?color=ff69b4" />
   	</a>
+    <a >
+      <img alt="Static Badge" src="https://img.shields.io/badge/arXiv-2306.13460-b31b1b?style=flat&link=https%3A%2F%2Farxiv.org%2Fabs%2F2306.13460">
+  	</a>
+    <a >
+  <img alt="Static Badge" src="https://img.shields.io/badge/Space-SMILE-ffd21e?style=flat&link=https%3A%2F%2Fhuggingface.co%2Fspaces%2Fyuezih%2FBLIP-SMILE">
+  	</a>
     <br />
 </p>
+
 
 [Learning Descriptive Image Captioning via Semipermeable Maximum Likelihood Estimation](https://arxiv.org/abs/2306.13460)
 
@@ -30,7 +37,7 @@
 
 ## Demo
 
-We are building online demos. Please stay tuned.
+Try out our [online demo](https://huggingface.co/spaces/yuezih/BLIP-SMILE) integrated into Huggingface Spaces 🤗 using Gradio!
 
 ## Usage
 
@@ -61,12 +68,22 @@ We provide our two checkpoints finetuned on MSCOCO with SMILE:
 - `blip_smile_base.pth`: The vanilla SMILE-optimized BLIP.
 - `blip_mle_smile_base.pth`: BLIP finetuned with MLE+SMILE (0.01:0.99), with a compromise between descriptiveness and accuracy.
 
+They are available at our [Huggingface Spaces](https://huggingface.co/spaces/yuezih/BLIP-SMILE). You can clone the entire space with the following commands, and then the checkpoints can be found in `BLIP-SMILE/model`.
+
+```
+# Make sure you have git-lfs installed (https://git-lfs.com)
+git lfs install
+git clone https://huggingface.co/spaces/yuezih/BLIP-SMILE
+```
+
+We also provide links to download the checkpoints from OneDrive.
+
 Method|Download|Cap. Len.|Lex. Div.|R@1|R@5|CLIPScore|PPL
 -|:-:|:-:|:-:|:-:|:-:|:-:|:-:
 `blip_smile_base.pth`|[OneDrive](https://1drv.ms/u/s!AocXJ7uKxt6XcsGzBZ4XKoZWKJY?e=BW7fJK)|22.3|4.5|10.0|24.5|75.0|95.6
 `blip_mle_smile_base.pth`|[OneDrive](https://1drv.ms/u/s!AocXJ7uKxt6Xc85rDJCdunDI0jU?e=eDpAGG)|19.8|3.6|**10.9**|**25.1**|76.2|79.4
 
-Set the checkpoint path in `SMILE/BLIP/configs/caption_coco.yaml`.
+After preparing the checkpoint, Set the checkpoint path in `SMILE/BLIP/configs/caption_coco.yaml`.
 
 ### Training & Inference
 
