@@ -68,6 +68,11 @@ We provide our two checkpoints finetuned on MSCOCO with SMILE:
 - `blip_smile_base.pth`: The vanilla SMILE-optimized BLIP.
 - `blip_mle_smile_base.pth`: BLIP finetuned with MLE+SMILE (0.01:0.99), with a compromise between descriptiveness and accuracy.
 
+Method|Cap. Len.|Lex. Div.|R@1|R@5|CLIPScore|PPL
+-|:-:|:-:|:-:|:-:|:-:|:-:
+`blip_smile_base.pth`|22.3|4.5|10.0|24.5|75.0|95.6
+`blip_mle_smile_base.pth`|19.8|3.6|**10.9**|**25.1**|76.2|79.4
+
 They are available at our [Huggingface Spaces](https://huggingface.co/spaces/yuezih/BLIP-SMILE). You can clone the entire space with the following commands, and then the checkpoints can be found in `BLIP-SMILE/model`.
 
 ```
@@ -76,12 +81,8 @@ git lfs install
 git clone https://huggingface.co/spaces/yuezih/BLIP-SMILE
 ```
 
-We also provide links to download the checkpoints from OneDrive.
+We also provide [links](https://1drv.ms/f/s!AocXJ7uKxt6XccRUrspMf11CHgw?e=GLrM1O) to download the checkpoints from OneDrive.
 
-Method|Download|Cap. Len.|Lex. Div.|R@1|R@5|CLIPScore|PPL
--|:-:|:-:|:-:|:-:|:-:|:-:|:-:
-`blip_smile_base.pth`|[OneDrive](https://1drv.ms/u/s!AocXJ7uKxt6XcsGzBZ4XKoZWKJY?e=BW7fJK)|22.3|4.5|10.0|24.5|75.0|95.6
-`blip_mle_smile_base.pth`|[OneDrive](https://1drv.ms/u/s!AocXJ7uKxt6Xc85rDJCdunDI0jU?e=eDpAGG)|19.8|3.6|**10.9**|**25.1**|76.2|79.4
 
 After preparing the checkpoint, Set the checkpoint path in `SMILE/BLIP/configs/caption_coco.yaml`.
 
